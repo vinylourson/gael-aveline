@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>curriculumVitae.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<img src="./1568230628829.png" alt="avatar" style="zoom:25%;" />
+<h1 id="ga%C3%ABl-aveline---curriculum-vit%C3%A6"><strong>Gaël AVELINE</strong> - Curriculum Vitæ</h1>
+<pre class="hljs"><code><div><span class="hljs-variable">$firstName</span> = <span class="hljs-string">"Gaël"</span>
+<span class="hljs-variable">$lastName</span> = <span class="hljs-string">"AVELINE"</span>
+<span class="hljs-variable">$age</span> = <span class="hljs-number">41</span>
+<span class="hljs-variable">$email</span> = <span class="hljs-string">"g[dot]aveline[at]giroll[dot]org"</span>
+<span class="hljs-variable">$driversLicence</span> = <span class="hljs-variable">$true</span>
+<span class="hljs-variable">$spokenLanguages</span> = <span class="hljs-selector-tag">@</span>(<span class="hljs-string">'Français'</span>,<span class="hljs-string">'English'</span>,<span class="hljs-string">'Español'</span>)
+</div></code></pre>
+<h2 id="activit%C3%A9s-professionnelles-%F0%9F%91%A8%E2%80%8D%F0%9F%92%BC%EF%B8%8F">Activités Professionnelles 👨‍💼️</h2>
+<h3 id="betclicgroup">BetclicGroup</h3>
+<h4 id="administrateur-syst%C3%A8me---mars-2020-%E2%9E%A1%EF%B8%8F-pr%C3%A9sent">Administrateur Système - mars 2020 ➡️ présent</h4>
+<p>Au sein de l’équipe IT interne de Betclic, j’assure l’administration et l’optimisation des services utilisés quotidiennement par les collaborateurs, dans un environnement hybride (Active Directory / Entra ID) et sous fortes contraintes de sécurité et de conformité.
+Spécialisé dans la gestion du cycle de vie des comptes utilisateurs (onboarding, droits d’accès, offboarding), j’interviens également sur les infrastructures réseau (site, VPN, inter-sites) et cloud/on-premises.
+Face à la croissance rapide de l’entreprise et aux exigences opérationnelles, j’ai mis en place des automatisations pour garantir une gestion rigoureuse, agile et scalable des processus, tout en maintenant un niveau de sécurité irréprochable.</p>
+<ul>
+<li>Entra ID (Azure AD) and Office 365 administration</li>
+<li>Desktops/laptops configuration and deployment (PowerShell, Intune, Autopilot/Whiteglove, Jamf, ...)</li>
+<li>Authenficiation unique / SSO (Okta, Azure), MFA (Azure, Duo)</li>
+<li>Cisco Meraki (switches and access points)</li>
+<li>Fortinet (Firewalls)</li>
+<li>Exchange Online, Sharepoint online</li>
+<li>Service Desk / user support (with Jira)</li>
+<li>Documentation (Confluence)</li>
+<li>Automatisations / versioning Git / GitHub (Actions), Azure runbooks, Terraform, Ansible</li>
+<li>Scripting : PowerShell, Python, Bash</li>
+</ul>
+<h3 id="actulog">Actulog</h3>
+<h4 id="coordinateur-syst%C3%A8me---septembre-2018-%E2%9E%A1%EF%B8%8F-mars-2020">Coordinateur Système - septembre 2018 ➡️ mars 2020</h4>
+<p>Antsys (renommée ACTULOG en décembre 2019) est une société informatique à Bordeaux, spécialisée dans les applications et solutions informatiques pour les entreprises et les organisations professionnelles, mes tâches au sein de cette entreprise étaient les suivantes :</p>
+<ul>
+<li>Élaboration du cahier des charges, évaluation des coûts, du temps et des ressources allouées.</li>
+<li>Gestion des serveurs, postes de travail et périphériques, équipements réseaux Windows Server 2008 → 2016 (SQL, IIS, AD, WSUS, TSE, Impression, Antivirus, serveur e-mail), Windows 7, Windows 10</li>
+<li>VMWare ESX/ESXi, vCenter, vSphere</li>
+<li>Pare-feux (Stormshield, Fortigate), switchs, points d'accès WiFi</li>
+<li>GNU/Linux (Debian/Ubuntu Server, CentOS) : Nginx, Apache, MySQL/MariaDB, ISPConfig, OpenMediaVault</li>
+<li>Sauvegardes des données du système d’information d’Antsys et de ses clients (Rsync, sauvegardes des VM, sauvegarde des bases de données)</li>
+<li>Résolution des incidents (via ticketing ou assistance téléphonique des utilisateurs sous et hors contrat)</li>
+<li>Optimisation des ressources informatiques et supervision de la sécurité de ces dernières (LibreNMS, Munin)</li>
+<li>Proposition de scenarii d’évolution des infrastructures</li>
+</ul>
+<h3 id="free--equaline">Free / Equaline</h3>
+<h4 id="technicien-helpdesk-confirm%C3%A9---f%C3%A9vrier-2012-%E2%9E%A1%EF%B8%8F-ao%C3%BBt-2018">Technicien Helpdesk Confirmé - février 2012 ➡️ août 2018</h4>
+<p>Au sein du département informatique d'un centre d'appels d'un célèbre FAI :</p>
+<ul>
+<li>support auprès des employés du centre / gestion et maintenance d'un parc de +500 postes et autant de téléphones VoIP</li>
+<li>prise en charge des tickets créés par les utilisateurs et escalade au support approprié si nécessaire</li>
+<li>refonte de l'interface de création de tickets (PHP/MySQL adossée à OTRS), utilisée sur tous les centres d'appels du groupe</li>
+<li>en 2012, migration des postes des conseillers de Microsoft Windows XP à Windows 7 puis Ubuntu 12.04</li>
+<li>durant l'été 2013, déménagement du site sans interruption de l'activité</li>
+<li>installation des nouveaux serveurs et brassage des baies techniques sur le nouveau site</li>
+<li>gestion des serveurs, postes de travail et périphériques, équipements réseaux
+<ul>
+<li>ProxmoxVE (virtualisation d'une grande partie des serveurs), Docker</li>
+<li>GNU/Linux (Debian / Ubuntu Server / Ubuntu desktop) : NFS, NIS, Samba, GLPI, Munin, Nagios, OTRS, Bind, isc-dhcp-server, Squid, Postfix, ZFS</li>
+<li>switchs / routeurs CISCO</li>
+<li>Windows Server 2008/2012/2016 (Active Directory, DNS, serveur d'impression), Windows 7</li>
+</ul>
+</li>
+</ul>
+<h3 id="lyc%C3%A9e-montesquieu-bordeaux">Lycée Montesquieu (Bordeaux)</h3>
+<h4 id="emploi-vie-scolaire-tice---2010-%E2%9E%A1%EF%B8%8F-2012">Emploi vie scolaire TICE - 2010 ➡️ 2012</h4>
+<ul>
+<li>gestion et maintenance du parc informatique</li>
+<li>support aux utilisateurs</li>
+<li>gestion et actualisation du site web de l’établissement (propulsé par Joomla)</li>
+<li>migration du contrôleur de domaine principal d'un serveur physique à un serveur virtualisé (KVM)</li>
+<li>clonage, déploiement et raccordement au domaine de 80 postes clients</li>
+<li>optimisation de l'utilisation de la bande passante (SDSL) par une mise en cache des sites webs les plus consultés (squid-cache)</li>
+<li>monitoring du réseau à l'aide de Fully Automated Nagios (sous CentOS)</li>
+</ul>
+<h3 id="luxener">Luxener</h3>
+<h4 id="gestionnaire-en-maintenance-et-support-en-informatique-alternance---2007-%E2%9E%A1%EF%B8%8F-2009">Gestionnaire en maintenance et support en informatique (alternance) - 2007 ➡️ 2009</h4>
+<ul>
+<li>gestion et maintenance du parc</li>
+<li>support aux utilisateurs</li>
+<li>gestion et administration de sites web (e-commerce, sites vitrines)</li>
+<li>SAV clients (courriel et téléphone)</li>
+<li>tests des produits avant mise en vente et création des fiches produits (photos, texte, ...)</li>
+</ul>
+<h2 id="comp%C3%A9tences-%F0%9F%92%AA%EF%B8%8F">Compétences 💪️</h2>
+<p>✅ Gestion du parc informatique (client et serveurs), réseau local et distant, sécurité et administration du réseau (Intune, Jamf, Google Workspace, Ansible, Active Directory, Apple Business Manager)
+✅ Commutation, routage, VPN, pare-feu (Fortigate, Stormshield, Cisco, Meraki)
+✅ Gestion de projets et documentation (Jira / Confluence)
+✅ Administration Systèmes GNU/Linux (serveur/client)
+✅ Administration Systèmes Microsoft Windows (serveur/client)
+✅ Langages :</p>
+<ul>
+<li><strong>Scripting / programmation :</strong> Powershell, Python, Bash, connaissances en PHP et JavaScript/Typescript</li>
+<li><strong>Balisage :</strong> HTML/CSS, Markdown, LaTeX, doku/mediawiki</li>
+</ul>
+<p>✅ Monitoring (Datadog, Grafana, Cacti, Munin, Nagios, Centreon, Intermapper, LibreNMS)
+✅ Virtualisation (KVM/Qemu, ProxmoxVE, Virtualbox, VMWare, HyperV, Nutanix, …)
+✅ Sauvegarde (VEEAM, BackupAssist, Rsync, XSI)</p>
+<p><code>PowerShell</code> <code>Python</code>  <code>Git</code> <code>Azure</code> <code>Bash</code> <code>Windows Server</code> <code>GNU/Linux</code> <code>macOS</code> <code>MDM</code> <code>Jamf</code> <code>Intune</code> <code>Mail administration</code> <code>Entra ID</code> <code>Exchange</code> <code>Jira</code> <code>Firewalls</code> <code>File Storage</code> <code>Backup</code> <code>Automation</code> <code>Scripting</code></p>
+<h2 id="formation--certification-%F0%9F%91%A8%E2%80%8D%F0%9F%8E%93">Formation / Certification 👨‍🎓</h2>
+<h3 id="2025">2025</h3>
+<p><u>Jamf Certified Tech - Jamf Pro</u></p>
+<h3 id="2019">2019</h3>
+<p><u>Certification administrateur Stormshield</u></p>
+<h3 id="2018">2018</h3>
+<p><u>Certification ITIL</u></p>
+<h3 id="2007-%E2%9E%A1%EF%B8%8F-2009">2007 ➡️ 2009</h3>
+<p><u>Gestionnaire en Maintenance et Support en Informatique</u>
+CÉSI Aquitaine - Poitou-Charentes, Blanquefort (33)
+Formation alternante - Titre de niveau III</p>
+<h3 id="2003-%E2%9E%A1%EF%B8%8F-2005">2003 ➡️ 2005</h3>
+<p><u>Cursus LLCE anglais</u></p>
+<p>Université Michel de Montaigne - Bordeaux III</p>
+<h3 id="2003">2003</h3>
+<p><u>Baccalauréat Littéraire</u></p>
+<p>Lycée Augustin Fresnel - Bernay (27)</p>
+
+</body>
+</html>
